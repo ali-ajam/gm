@@ -15,7 +15,7 @@ class Footer extends React.Component {
                   © {new Date().getFullYear()}{' '}
                   <a
                     className='font-weight-bold ml-1'
-                    href='https://google.com'
+                    href='https://github.com/ali-ajam/gm'
                     target='_blank'
                   >
                     Ali Ajam
