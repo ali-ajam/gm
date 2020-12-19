@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { compose } from 'recompose';
 // react plugin used to create google maps
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
 import { MarkerWithLabel } from 'react-google-maps/lib/components/addons/MarkerWithLabel';
@@ -8,69 +9,55 @@ import { Card, Container, Row } from 'reactstrap';
 import Header from 'components/Headers/Header.js';
 import car from '../assets/img/car.png';
 
-const MapCustom = withScriptjs(
-  withGoogleMap(() => (
-    <GoogleMap
-      defaultZoom={12}
-      defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
-      defaultOptions={{
-        scrollwheel: false,
-      }}
+const google = window.google;
+const MapCustom = compose(
+  withScriptjs,
+  withGoogleMap
+)(() => (
+  <GoogleMap
+    defaultZoom={14}
+    defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
+    defaultOptions={{
+      scrollwheel: false,
+    }}
+    options={{ gestureHandling: 'greedy', zoomControl: false }}
+  >
+    <MarkerWithLabel
+      position={{ lat: 40.748817, lng: -73.985428 }}
+      labelStyle={markerStyle}
+      labelAnchor={new google.maps.Point(0, 0)}
     >
-      <MarkerWithLabel
-        key='1'
-        position={{ lat: 40.748817, lng: -73.985428 }}
-        labelStyle={markerStyle}
-      >
-        <Fragment>
-          <div
-            style={{
-              ...labelStyle,
-              background: 'linear-gradient(87deg, #2dce89 0, #2dcecc 100%)',
-            }}
-          >
-            70%
-          </div>
-          <img style={{ width: '50px' }} src={car} />
-        </Fragment>
-      </MarkerWithLabel>
-      <MarkerWithLabel
-        key='2'
-        position={{ lat: 40.722321, lng: -73.987381 }}
-        labelStyle={markerStyle}
-      >
-        <Fragment>
-          <div
-            style={{
-              ...labelStyle,
-              background: 'linear-gradient(87deg, #f5365c 0, #f56036 100%)',
-            }}
-          >
-            20%
-          </div>
-          <img style={{ width: '50px' }} src={car} />
-        </Fragment>
-      </MarkerWithLabel>
-      <MarkerWithLabel
-        key='3'
-        position={{ lat: 40.728931, lng: -73.986961 }}
-        labelStyle={markerStyle}
-      >
-        <Fragment>
-          <div
-            style={{
-              ...labelStyle,
-              background: 'linear-gradient(87deg, #fb6340 0, #fbb140 100%)',
-            }}
-          >
-            50%
-          </div>
-          <img style={{ width: '50px' }} src={car} />
-        </Fragment>
-      </MarkerWithLabel>
-    </GoogleMap>
-  ))
-);
+      <Fragment>
+        <div
+          style={{
+            ...labelStyle,
+            background: 'linear-gradient(87deg, #2dce89 0, #2dcecc 100%)',
+          }}
+        >
+          70%
+        </div>
+        <img style={{ width: '50px' }} src={car} />
+      </Fragment>
+    </MarkerWithLabel>
+    <MarkerWithLabel
+      position={{ lat: 40.748827, lng: -73.995428 }}
+      labelStyle={markerStyle}
+      labelAnchor={new google.maps.Point(0, 0)}
+    >
+      <Fragment>
+        <div
+          style={{
+            ...labelStyle,
+            background: 'linear-gradient(87deg, #2dce89 0, #2dcecc 100%)',
+          }}
+        >
+          50%
+        </div>
+        <img style={{ width: '50px' }} src={car} />
+      </Fragment>
+    </MarkerWithLabel>
+  </GoogleMap>
+));
 
 class Google extends React.Component {
   render() {
