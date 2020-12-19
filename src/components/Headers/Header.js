@@ -19,7 +19,7 @@ class Header extends React.Component {
                             tag='h6'
                             className='text-uppercase text-muted mb-0'
                           >
-                            Total traffic
+                            Total electric vehicles
                           </CardTitle>
                           <span className='h3 font-weight-bold mb-0'>
                             350,897
@@ -27,7 +27,7 @@ class Header extends React.Component {
                         </div>
                       </Row>
                       <p className='mt-3 mb-0 text-sm'>
-                        <span className='text-success mr-2'>3.48%</span>
+                        <span className='text-success mr-2'>1.48%</span>
                         <span className='text-nowrap'>Since last month</span>
                       </p>
                     </CardBody>
@@ -42,7 +42,7 @@ class Header extends React.Component {
                             tag='h6'
                             className='text-uppercase text-muted mb-0'
                           >
-                            New users
+                            New electric vehicles
                           </CardTitle>
                           <span className='h3 font-weight-bold mb-0'>
                             2,356
@@ -65,14 +65,14 @@ class Header extends React.Component {
                             tag='h6'
                             className='text-uppercase text-muted mb-0'
                           >
-                            Sales
+                            Average charge level
                           </CardTitle>
-                          <span className='h3 font-weight-bold mb-0'>924</span>
+                          <span className='h3 font-weight-bold mb-0'>60%</span>
                         </div>
                       </Row>
                       <p className='mt-3 mb-0 text-sm'>
-                        <span className='text-success mr-2'>3.48%</span>
-                        <span className='text-nowrap'>Since last month</span>
+                        <span className='text-warning mr-2'>5%</span>
+                        <span className='text-nowrap'>below the limit</span>
                       </p>
                     </CardBody>
                   </Card>
@@ -86,15 +86,13 @@ class Header extends React.Component {
                             tag='h6'
                             className='text-uppercase text-muted mb-0'
                           >
-                            Performance
+                            Out of Network
                           </CardTitle>
-                          <span className='h3 font-weight-bold mb-0'>
-                            49,65%
-                          </span>
+                          <span className='h3 font-weight-bold mb-0'>327</span>
                         </div>
                       </Row>
                       <p className='mt-3 mb-0 text-sm'>
-                        <span className='text-success mr-2'>3.48%</span>
+                        <span className='text-danger mr-2'>7%</span>
                         <span className='text-nowrap'>Since last month</span>
                       </p>
                     </CardBody>

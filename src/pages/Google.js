@@ -9,7 +9,6 @@ import { Card, Container, Row } from 'reactstrap';
 import Header from 'components/Headers/Header.js';
 import car from '../assets/img/car.png';
 
-const google = window.google;
 const MapCustom = compose(
   withScriptjs,
   withGoogleMap
@@ -25,7 +24,7 @@ const MapCustom = compose(
     <MarkerWithLabel
       position={{ lat: 40.748817, lng: -73.985428 }}
       labelStyle={markerStyle}
-      labelAnchor={new google.maps.Point(0, 0)}
+      labelAnchor={new window.google.maps.Point(0, 0)}
     >
       <Fragment>
         <div
@@ -36,13 +35,13 @@ const MapCustom = compose(
         >
           70%
         </div>
-        <img style={{ width: '50px' }} src={car} />
+        <img style={{ width: '50px', transform: 'rotate(210deg)' }} src={car} />
       </Fragment>
     </MarkerWithLabel>
     <MarkerWithLabel
       position={{ lat: 40.748827, lng: -73.995428 }}
       labelStyle={markerStyle}
-      labelAnchor={new google.maps.Point(0, 0)}
+      labelAnchor={new window.google.maps.Point(0, 0)}
     >
       <Fragment>
         <div
@@ -53,7 +52,24 @@ const MapCustom = compose(
         >
           50%
         </div>
-        <img style={{ width: '50px' }} src={car} />
+        <img style={{ width: '50px', transform: 'rotate(115deg)' }} src={car} />
+      </Fragment>
+    </MarkerWithLabel>
+    <MarkerWithLabel
+      position={{ lat: 40.758832, lng: -73.995428 }}
+      labelStyle={markerStyle}
+      labelAnchor={new window.google.maps.Point(0, 0)}
+    >
+      <Fragment>
+        <div
+          style={{
+            ...labelStyle,
+            background: 'linear-gradient(87deg, #2dce89 0, #2dcecc 100%)',
+          }}
+        >
+          20%
+        </div>
+        <img style={{ width: '50px', transform: 'rotate(30deg)' }} src={car} />
       </Fragment>
     </MarkerWithLabel>
   </GoogleMap>
